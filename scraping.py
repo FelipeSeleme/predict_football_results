@@ -2,6 +2,7 @@ import time
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
+
 pd.set_option('display.width', 1080)  # Pandas adjustment to the width view in print command
 pd.set_option('display.max_columns', 100)  # Pandas tweak to not hide columns in print command
 pd.set_option('display.max_rows', 380)
@@ -34,7 +35,7 @@ print(shooting)
 shooting.columns = shooting.columns.droplevel()
 team_data = matches.merge(shooting[["Date", "Sh", "SoT", "Dist", "FK", "PK", "PKatt"]], on="Date")
 print(team_data)
-years = list(range(2022, 2020, -1))
+years = list(range(2022, 2018, -1))
 
 all_matches = []
 for year in years:
